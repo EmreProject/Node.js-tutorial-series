@@ -85,8 +85,8 @@ const eraseAll=await this.deleteAll();
 exports.findSameNameDene=function(req,res){
 
     Subscriber.create({
-        name: "Emre",
-        email: "jon@jonwexler.com",
+        name: "Emre Wexler",
+        email: "jon@jonwexler2.com",
         zipCode: "12345"
         })
         .then(subscriber =>{

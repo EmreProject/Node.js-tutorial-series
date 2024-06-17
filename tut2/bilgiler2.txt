@@ -1,0 +1,7 @@
+The --save flag saves the cities package as a dependency for this project. Check your
+package.json file now to see how the package is listed under dependencies. Because your
+node_modules folder will grow, I recommend that you don’t include it when you share
+the project code online. Anyone who downloads the project, however, can enter npm
+install to automatically install all the project dependencies listed in this file.
+
+sayfa:38

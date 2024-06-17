@@ -1,0 +1,51 @@
+Kaldıgım yer: 101 -> Creating views, üsttekileri yaptım
+
+
+http://localhost:3000
+
+node main.js ile calıstır
+
+sık npm kullanılanlar
+npm init
+npm i http-status-codes -S
+http icin npm gerek yok http-status-codes de var
+fs icin npm gerek yok sadece main.js icine require ile ekle. Cünkü zaten node icinde var
+
+npm install express --save  ->bu varsa http-status-codes gerek yok!!!
+npm i nodemon -g,  package-json script icine "start": "nodemon main.js" ekle, terminal nodemon yaz !!!!! BU SAYEDE HERHANGİ DEGİSİKLİK YAPINCA OTOMATİK SUNUCUYU REFRESHLER!!!!!
+npm install ejs --save
+npm install express-ejs-layouts --save
+npm install mongodb@6.7 --save
+npm i mongoose -S
+
+cd ~/Desktop/complete-javascript-course-master/01-Fundamentals-Part-1/starter/NODEJS (sag click ile kopyala yapıstır)
+
+
+terminal general
+pwd current dir
+
+terminal node
+node   node shelle girer(repl benim kod yazdıgım)
+.exit shelden cıkar
+.editor kod yazmak icin text editor acar!!!!!
+.help
+.load
+.save
+
+
+curl --data "username=Jon&password=secret" http://localhost:3000  
+
+node hello.js    eger bulundugum directoryde hello.js var ise calıstırır
+.load hello.js ile yükleyip modifiye edebiliriz
+.save ile de kaydedebiliriz
+
+npm init
+npm install package
+--save   adds into dependencies (-S)
+--global installs the package
+globally on your computer, to be used anywhere within terminal. (-g)
+
+
+node main.js yaptıktan sonra browsera "localhost:
+3000" yaz ve ac
+kapatmak icin ctrl+c veya direk terminali kapa!!!

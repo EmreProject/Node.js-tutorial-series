@@ -1,0 +1,34 @@
+mongosh
+
+
+https://www.mongodb.com/docs/drivers/node/current/?_ga=2.175316709.61377856.1717869924-1609388933.1717268629&_gac=1.18289995.1717355761.Cj0KCQjwsPCyBhD4ARIsAPaaRf3m5gmyU_c8v3sOBr3NdS4iIctl4_F3tQHdrw-ocg40ELCIzuTtVqkaAtReEALw_wcB
+https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/
+https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/#std-label-node-crud-landing
+
+
+https://www.mongodb.com/developer/products/mongodb/cheat-sheet/ ->MUKEMMEL CHEATSHEEAT BUNDAN BAK!!!!!
+https://www.mongodb.com/docs/drivers/node/current/  cok iyi
+https://www.mongodb.com/resources/languages/mongodb-with-nodejs   COK İYİ
+https://www.yusufsezer.com.tr/node-js-mongodb/   COK İYİ
+
+önce ilk terminale mongod yaz
+baska terminale mongosh yaz
+show dbs 
+use emre_yeni_1 ->bu database kullanır veya yoksa yaratır ve kullanır
+sonra
+db.kisi.insertOne({
+name: "Jon Wexler",
+email: "jon@jonwexler.com",
+note: "Decent guy."
+})   ->kisi adlı collectiona(yoksa yaratır) bu objeyi koyar
+db.kisi.updateOne({name:"emre"},{$set:{age:26}})
+db.kisi.find() veya db.kisi.find({})  ->hepsini gösterir
+show collections
+db.contacts.delete({name: "Jon
+Wexler"})
+db.contacts.deleteMany({})
+
+
+bu updateOne vs gibilerin updateMany leri de var!!!!!
+
+database > collection > object

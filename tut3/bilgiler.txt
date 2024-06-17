@@ -1,0 +1,6 @@
+node main.js yaptıktan sonra browsera "localhost:
+3000" yaz ve ac
+
+npm i http-status-codes -S
+
+kapatmak icin ctrl+c veya direk terminali kapa

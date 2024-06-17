@@ -1,0 +1,12 @@
+div{
+
+    background-color: green;
+    box-sizing: border-box;
+    width:100%;
+    padding: 5%;
+}
+
+html,body{
+margin: 0;;
+
+}

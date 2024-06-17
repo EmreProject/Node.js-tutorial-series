@@ -80,3 +80,22 @@ const eraseAll=await this.deleteAll();
 
 
 }
+
+
+exports.findSameNameDene=function(req,res){
+
+    Subscriber.create({
+        name: "Emre",
+        email: "jon@jonwexler.com",
+        zipCode: "12345"
+        })
+        .then(subscriber =>{
+
+         console.log(subscriber);
+         subscriber.findSameName().then(result=> res.send(`thanks ${result}`));
+        
+        });
+
+      
+
+}

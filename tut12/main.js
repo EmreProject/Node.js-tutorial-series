@@ -36,7 +36,7 @@ db.once("open", () => {
         
     app.get("/contact", subscribersController.getSubscriptionPage);
     app.post("/subscribe", urlencodedParser,subscribersController.saveSubscriber);
-
+    app.get("/samename", subscribersController.findSameNameDene);
      app.get("/subscribers", subscribersController.getAllSubscribers, (req, res, next) => {
               
     res.render("subscriber",{subscribers:req.data1});

@@ -3,6 +3,7 @@ path = require('path'),
 app = express(),
 layouts = require("express-ejs-layouts"),
 subscribersController= require("./controllers/subscribersController"),
+modelDeneme=require("./models/models_extra"),
 mongoose = require("mongoose");
 
   //collection ismi icin subscriber.js oku
@@ -42,6 +43,7 @@ db.once("open", () => {
     res.render("subscriber",{subscribers:req.data1});
     });
 
+    app.get("/exampleModel",modelDeneme.combineModelsExample);
 
 app.listen(app.get("port"), () => {
     console.log(`The Express.js server has started and is listening

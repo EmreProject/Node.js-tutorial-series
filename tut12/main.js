@@ -3,6 +3,8 @@ path = require('path'),
 app = express(),
 layouts = require("express-ejs-layouts"),
 subscribersController= require("./controllers/subscribersController"),
+coursesController= require("./controllers/coursesController"),
+usersController= require("./controllers/usersController"),
 modelDeneme=require("./models/models_extra"),
 mongoose = require("mongoose");
 
@@ -33,16 +35,28 @@ db.once("open", () => {
     });
 
 
+    let course1;
+    coursesController.CoursesArray().then(all=>{
+      course1=all[0];
+      console.log(course1);
+      usersController.createUser("eren","gokk","1234213","erennggg@jfjj",course1);
+    })
+
+//subscribersController.newSubscriber("ereenneen","jon@jonwexler4.com");
    // subscribersController.createRandomFromZero();
         
     app.get("/contact", subscribersController.getSubscriptionPage);
     app.post("/subscribe", urlencodedParser,subscribersController.saveSubscriber);
     app.get("/samename", subscribersController.findSameNameDene);
-     app.get("/subscribers", subscribersController.getAllSubscribers, (req, res, next) => {
-              
+     app.get("/subscribers", subscribersController.getAllSubscribers, (req, res, next) => {      
     res.render("subscriber",{subscribers:req.data1});
     });
-
+    app.get("/courses", coursesController.getAllCourses, (req, res, next) => {        
+      res.render("courses",{courses:req.data1});
+      });
+      app.get("/users", usersController.getAllUsers, (req, res, next) => {        
+        res.render("users",{users:req.data1});
+        });
     app.get("/exampleModel",modelDeneme.combineModelsExample);
 
 app.listen(app.get("port"), () => {

@@ -18,6 +18,7 @@ subscriberSchema = mongoose.Schema({
 });
 
 
+
 subscriberSchema.methods.getInfo=function(){
 
 

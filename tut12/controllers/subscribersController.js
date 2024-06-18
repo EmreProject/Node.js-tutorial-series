@@ -1,10 +1,39 @@
+const { modelName } = require("../models/course");
 const Subscriber = require("../models/subscriber"); //collection aslında
-
+const userController=require("./usersController.js")
 
 exports.getSubscriptionPage = (req, res) => {
     res.render("contact");
     };
 
+
+exports.newSubscriber=function(name,email){
+
+userController.usersArray().then(all=>{
+
+all.forEach(a=>{
+   
+    if(a.email==email){
+       
+        Subscriber.create({
+            name: name,
+            email: email,
+            zipCode: "12345"
+            }).then(newsub=>{
+                
+            a.subscribedAccount=newsub;
+            a.save();
+           
+        });
+
+    }
+
+});
+
+});
+
+
+}
 
     exports.saveSubscriber = async (req, res) => {
     

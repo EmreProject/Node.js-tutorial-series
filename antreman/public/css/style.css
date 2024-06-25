@@ -1,0 +1,7 @@
+html{
+    background-color: black;
+}
+
+form *:not(button){
+    color:white;
+}

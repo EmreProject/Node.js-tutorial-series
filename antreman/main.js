@@ -1,12 +1,10 @@
 const express = require("express"),
 path = require('path'),
 app = express(),
-layouts = require("express-ejs-layouts"),
-people= require("./controllers/peopleController"),
+staticFiles=require("./controllers/staticController.js"),
+personController=require("./controllers/personController.js"),
 mongoose = require("mongoose");
 
-  //collection ismi icin subscriber.js oku
-  const person = require("./models/person")
 
   //for using req.body... for reading post data
   var bodyParser = require('body-parser')
@@ -23,7 +21,7 @@ app.set("view engine", "ejs");//önemli
 
 //MONGOOSE BETTER FOR MVC STRUCTURE(BÜTÜN ELEMANLAR BELLİ BİR CLASS FORMATINDA DÜZEN İCİN)
 mongoose.connect(
-"mongodb://localhost:27017/people_db"
+"mongodb://localhost:27017/antreman1"
 );
 const db = mongoose.connection;
 
@@ -32,10 +30,10 @@ db.once("open", () => {
     });
 
 
-    app.get("/",people.getPersonAdd);
-    app.post("/newperson",urlencodedParser,people.saveNewPerson);
-   app.get("/searchpage",people.getPersonPage);
-    app.post("/search",urlencodedParser,people.getPerson);
+
+app.get("/",staticFiles.indexPage);
+app.get("/style.css",staticFiles.cssIndexPage);
+ app.post("/newPerson",urlencodedParser,personController.createPerson);
 
     
 app.listen(app.get("port"), () => {

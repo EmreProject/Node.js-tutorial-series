@@ -1,16 +1,17 @@
 const express = require("express"),
 path = require('path'),
 app = express(),
-staticFiles=require("./controllers/staticController.js"),
-personController=require("./controllers/personController.js"),
 mongoose = require("mongoose"),
 layouts = require("express-ejs-layouts");
+
+
+ //app.use(layouts);
+ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
- //app.use(layouts);
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");//önemli
@@ -26,7 +27,13 @@ db.once("open", () => {
     console.log("Successfully connected to MongoDB using Mongoose!");
     });
 
+    const userRouter = require("./routes/userRoutes.js");
+    app.use("/users", userRouter);
 
+
+    const homeController=require("./controllers/homeController.js");
+    app.get("/",homeController.indexPageView);
+   
 
     
 app.listen(app.get("port"), () => {
